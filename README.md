@@ -55,6 +55,6 @@ Next, transfer the fastqc.sif file to the system on which you want to run FastQC
 # set up path to the FastQC Singularity container
 FASTQC_SIF=path/to/fastqc.sif
 
-# Test that Samtools can run from Singularity container
+# Test that FASTQC can run from Singularity container
 singularity run $FASTQC_SIF fastqc --help # depending on system/version, singularity may be called apptainer
 ```

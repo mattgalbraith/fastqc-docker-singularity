@@ -43,8 +43,8 @@ https://github.com/mattgalbraith/singularity-docker
 ### 4. Save Docker image as tar and convert to sif (using singularity run from Docker container)  
 ``` bash
 docker images
-docker save <Image_ID> -o fastqc-docker.tar && gzip fastqc-docker.tar # = IMAGE_ID of fastqc image
-docker run -v "$PWD":/data --rm -it singularity bash -c "singularity build /data/fastqc.sif docker-archive:///data/fastqc-docker.tar.gz"
+docker save <Image_ID> -o fastqc0.11.9-docker.tar && gzip fastqc0.11.9-docker.tar # = IMAGE_ID of fastqc image
+docker run -v "$PWD":/data --rm -it singularity:1.1.5 bash -c "singularity build /data/fastqc0.11.9.sif docker-archive:///data/fastqc0.11.9-docker.tar.gz"
 ```
 NB: On Apple M1/M2 machines ensure Singularity image is built with x86_64 architecture or sif may get built with arm64  
 

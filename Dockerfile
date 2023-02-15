@@ -1,6 +1,6 @@
 ################## BASE IMAGE ######################
 # FROM alpine as base
-FROM ubuntu:20.04 as base
+FROM --platform=linux/amd64 ubuntu:20.04 as base
 
 ################## METADATA ######################
 LABEL base_image="Ubuntu:20.04"
@@ -39,7 +39,7 @@ RUN unzip fastqc_v0.11.9.zip \
 #     && rm fastqc_v0.11.9.zip
 
 ################## 2ND STAGE ######################
-FROM ubuntu:20.04
+FROM --platform=linux/amd64 ubuntu:20.04
 # ARG ENV_NAME="fastqc"
 # ARG FASTQC_VERSION="0.11.9"
 ENV DEBIAN_FRONTEND noninteractive
